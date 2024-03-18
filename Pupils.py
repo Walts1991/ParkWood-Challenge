@@ -1,7 +1,10 @@
+#Need to complete questions 5 and 7 of Pupil Information / Testing / Refinement of nested if statements
+
+#ParkWood School - AddTeachers function used as base template
 from tkinter import *
 from tkinter import messagebox
 import os
-
+#Replaced Teacher with Pupil
 def SavePupil() :
 
     PupilIDSave = PupilIDVar.get()
@@ -12,14 +15,16 @@ def SavePupil() :
 
     SurnameSave = SurnameVar.get()
     SurnameSave = SurnameSave.ljust(50)
-
+    #Added Form Class
     FormClassSave = FormClassVar.get()
     FormClassSave = FormClassSave.ljust(50)
-
+    #Added Date of Birth
     DateOfBirthSave = DateOfBirthVar.get()
     DateOfBirthSave = DateOfBirthSave.ljust(50)
 
     fileObject = open("PupilDetails.txt","a")
+    
+    if PupilIDSave == 
     
     fileObject.write(PupilIDSave + FirstnameSave + SurnameSave + FormClassSave + DateOfBirthSave + "\n")
     fileObject.close()
@@ -47,12 +52,12 @@ Label(frame1, text="Surname").grid(row=5, column=0, sticky=W)
 SurnameVar=StringVar()
 SurnameVar= Entry(frame1, textvariable=SurnameVar)
 SurnameVar.grid(row=5,column=1,sticky=W)
-
+#Added Form Class
 Label(frame1, text="Form Class").grid(row=6, column=0, sticky=W)
 FormClassVar=StringVar()
 FormClassVar= Entry(frame1, textvariable=FormClassVar)
 FormClassVar.grid(row=6,column=1,sticky=W)
-
+#Added Date of Birth
 Label(frame1, text="Date of Birth").grid(row=7, column=0, sticky=W)
 DateOfBirthVar=StringVar()
 DateOfBirthVar= Entry(frame1, textvariable=DateOfBirthVar)

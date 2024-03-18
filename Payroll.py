@@ -4,7 +4,7 @@ from tkinter import *
 PayrollWin=Tk()
 PayrollWin.title("Payroll")
 PayrollWin.geometry("300x500")
-
+``
 GrossPay=IntVar()
 Tax=DoubleVar()
 Tax.set('0.0')
