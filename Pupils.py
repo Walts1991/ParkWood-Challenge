@@ -24,8 +24,6 @@ def SavePupil() :
 
     fileObject = open("PupilDetails.txt","a")
     
-    if PupilIDSave == 
-    
     fileObject.write(PupilIDSave + FirstnameSave + SurnameSave + FormClassSave + DateOfBirthSave + "\n")
     fileObject.close()
     
