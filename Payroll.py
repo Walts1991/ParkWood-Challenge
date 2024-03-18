@@ -4,7 +4,7 @@ from tkinter import *
 PayrollWin=Tk()
 PayrollWin.title("Payroll")
 PayrollWin.geometry("300x500")
-``
+
 GrossPay=IntVar()
 Tax=DoubleVar()
 Tax.set('0.0')
@@ -29,7 +29,7 @@ def CalcPay():
     StudentLoan.set(Gross * 0.1)
     #Chanses to Deducts and NatPay in relation to above tax increase and NI decrease
     Deducts.set(Gross * 0.22 + Gross * 0.085 + Gross * 0.08 + Gross * 0.1)
-    NetPay.set(Gross - (Gross * 0.22 + Gross * 0.085 + Gross * 0.08 + Gross * 0.1)
+    NetPay.set(Gross - (Gross * 0.22 + Gross * 0.085 + Gross * 0.08 + Gross * 0.1))
         
    
 GrossPayLabel=Label(PayrollWin, text="Gross Pay").grid(row=3, column=0, sticky=W)
@@ -54,7 +54,7 @@ NetPayLabelText=Label(PayrollWin, text="Net Pay: ").grid(row=10, column=0, stick
 NetPayLabelValue=Label(PayrollWin, textvariable=NetPay).grid(row=10, column=1, sticky=W)
 
 
-b2= Button(PayrollWin, text=" Back ", command=PayrollWin.destroy).grid(row=10)
+b2= Button(PayrollWin, text=" Back ", command=PayrollWin.destroy).grid(row=11)
    
     
 PayrollWin.mainloop()

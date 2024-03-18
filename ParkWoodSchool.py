@@ -14,23 +14,29 @@ def MainMenu():
                            
     btn1=Button(frame1,text="Add Teacher",command=AddTeacher)
     btn2=Button(frame1,text="Payroll",command= Payroll)
+    btn3=Button(frame1,text="Add Pupil",command= AddPupil)
     
     frame2=Frame(MainMenuWin)
     frame2.pack()
 
-    btn3=Button(frame2,text="Add User",command=AddUser)
+    btn4=Button(frame2,text="Add User",command=AddUser)
     
     frame3=Frame(MainMenuWin)
     frame3.pack()
 
-    btn4=Button(frame3,text="Logout",command=LoginScreen)
-    btn5=Button(frame3,text="Exit",command=MainMenuWin.destroy)
+    btn5=Button(frame3,text="Logout",command=LoginScreen)
+    btn6=Button(frame3,text="Exit",command=MainMenuWin.destroy)
             
     btn1.pack()
     btn2.pack()
     btn3.pack()
-    btn4.pack(side=LEFT)
+    btn4.pack()
     btn5.pack(side=LEFT)
+    btn6.pack(side=LEFT)
+    
+def AddPupil():
+    
+    os.system('python Pupils.py')
             
 def Payroll():
     
@@ -169,15 +175,13 @@ def LoginScreen():
         username=usname.get()
         passwd=password.get()
         flag=TRUE
-
-        if username.strip() == "" and passwd.strip() == "":
-            messagebox.showinfo("Error","Blank username and password")
-        elif passwd.strip() == "":
-            messagebox.showinfo("Error","Blank password")
-        elif username.strip()== "":
-            messagebox.showinfo("Error","Blank username")
+        #Edited validation to perform single check to confirm if either username or password is incorrect
+        if username.strip() == "" or passwd.strip() == "":
+            if username.strip()== "":
+                messagebox.showinfo("Error","Blank username")
+            elif passwd.strip() == "":
+                messagebox.showinfo("Error","Blank password")
         else:
-            
             passwordfile = open("data.dat","r")
             passvar = passwordfile.readline()
                             
